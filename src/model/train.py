@@ -1,5 +1,7 @@
 # Import libraries
 
+import mlflow
+
 import argparse
 import glob
 import os
@@ -11,8 +13,8 @@ from sklearn.linear_model import LogisticRegression
 
 # define functions
 def main(args):
-    # TO DO: enable autologging
-
+    
+    mlflow.autolog()
 
     # read data
     df = get_csvs_df(args.training_data)
