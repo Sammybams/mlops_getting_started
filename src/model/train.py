@@ -5,7 +5,7 @@ import glob
 import os
 
 import pandas as pd
-
+import numpy as np
 from sklearn.linear_model import LogisticRegression
 
 
@@ -34,7 +34,10 @@ def get_csvs_df(path):
 
 
 # TO DO: add function to split data
-
+def split(df):
+    X, y = df[df.columns[1:-1]].values
+    return train_test_split(X, y, test_size=0.30, random_state=0)
+    
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
     # train model
