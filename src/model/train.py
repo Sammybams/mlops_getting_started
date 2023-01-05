@@ -14,6 +14,7 @@ from sklearn.model_selection import train_test_split
 # define functions
 def main(args):
     
+    # enable auto logging
     mlflow.autolog()
 
     # read data
