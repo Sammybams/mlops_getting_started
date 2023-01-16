@@ -1,3 +1,11 @@
+on:
+  pull_request:
+
+jobs:
+  run_pipeline:
+    runs-on: ubuntu-latest
+    steps:
     - name: Placeholder
       run: |
         echo "Will add code checks here in next challenge"
+    
