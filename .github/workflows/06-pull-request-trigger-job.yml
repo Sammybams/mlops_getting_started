@@ -21,7 +21,7 @@ jobs:
       run: | 
         flake8 src/model/
   job2:
-    name: unit-test
+    name: unit_test
     runs-on: ubuntu-latest
     steps:
     - name: Check out repo
