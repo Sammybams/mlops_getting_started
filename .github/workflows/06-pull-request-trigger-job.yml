@@ -4,8 +4,7 @@ on:
   pull_request:
 
 jobs:
-  job_linting:
-    name: linting
+  linting:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repo
@@ -20,8 +19,7 @@ jobs:
     - name: Run linting tests
       run: | 
         flake8 src/model/
-  job_unit_test:
-    name: unit_test
+  unit_test:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repo
