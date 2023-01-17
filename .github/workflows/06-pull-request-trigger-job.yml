@@ -1,3 +1,5 @@
+name: Automatically trigger a GitHub Actions workflow by creating a pull request.
+
 on:
   pull_request:
 
