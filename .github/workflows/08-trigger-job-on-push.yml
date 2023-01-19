@@ -1,0 +1,39 @@
+# name: Automatically trigger a GitHub Actions workflow by Pushing code to main branch.
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   train_dev:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Check out repo
+#       uses: actions/checkout@main
+#     - name: Install az ml extension
+#       run: az extension add -n ml -y
+#     - name: Azure login
+#       uses: azure/login@v1
+#       with:
+#         creds: ${{secrets.AZURE_CREDENTIALS}}
+#     - name: Trigger Azure Machine Learning job
+#       run: |
+#         az ml job create --file src/job-cluster.yml --resource-group mlops --workspace-name mlops_getting_started
+
+#   job_unit_test:
+#     name: unit_test
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Check out repo
+#       uses: actions/checkout@main
+#     - name: Use Python version 3.8
+#       uses: actions/setup-python@v3
+#       with:
+#         python-version: '3.8'
+#     - name: Install Pytest
+#       run: |
+#         python -m pip install -r requirements.txt
+#     - name: Run unit tests
+#       run: |
+#         pytest tests/
