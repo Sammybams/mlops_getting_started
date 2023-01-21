@@ -9,7 +9,6 @@ jobs:
   experiment_train:
     runs-on: ubuntu-latest
     environment: production
-    arguments: ["--stream"]
     steps:
     - name: Check out repo
       uses: actions/checkout@main
@@ -21,13 +20,12 @@ jobs:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Trigger Azure Machine Learning job
       run: |
-        az ml job create --file src/job-cluster-dev.yml --resource-group mlops --workspace-name mlops_getting_started
+        az ml job create --file src/job-cluster-dev.yml  --stream -s --resource-group mlops --workspace-name mlops_getting_started
 
   production_train:
     runs-on: ubuntu-latest
     environment: development
     needs: ["experiment_train"]
-    arguments: ["--stream"]
     steps:
     - name: Check out repo
       uses: actions/checkout@main
@@ -39,4 +37,4 @@ jobs:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Trigger Azure Machine Learning job
       run: |
-        az ml job create --file src/job-cluster-prod.yml --resource-group mlops --workspace-name mlops_getting_started
+        az ml job create --file src/job-cluster-prod.yml --stream -s --resource-group mlops --workspace-name mlops_getting_started
