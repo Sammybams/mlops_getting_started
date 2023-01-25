@@ -35,4 +35,4 @@ jobs:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Deploy Model to Endpoint
       run: |
-        az ml job create --file src/job-cluster-dev.yml  --stream -s --resource-group mlops --workspace-name mlops_getting_started
+         az ml online-deployment create --name mlflow-deployment --endpoint diabetest-prod-pred --file src/deploy-latest-model.yml --all-traffic --resource-group mlops --workspace-name mlops_getting_started
