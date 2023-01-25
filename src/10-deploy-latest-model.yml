@@ -1,6 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
 name: blue
-endpoint_name: my-endpoint
+endpoint_name: diabetest-prod-pred
 model:
   path: ../../model-1/model/
 code_configuration:
