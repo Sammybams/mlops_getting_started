@@ -18,12 +18,13 @@ jobs:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Create Endpoint
       run: |
-         az ml online-endpoint create --name diabetest-prod-pred --file src/create-endpoint.yml --resource-group mlops --workspace-name mlops_getting_started
+         az ml online-endpoint create --name diabetest-prod-pred --file src/create-endpoint.yml --stream -s --resource-group mlops --workspace-name mlops_getting_started
 
 
   deploy-model:
     runs-on: ubuntu-latest
     environment: production
+    needs: ["create-endpoint"]
     steps:
     - name: Check out repo
       uses: actions/checkout@main
