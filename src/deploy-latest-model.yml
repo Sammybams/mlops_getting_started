@@ -3,7 +3,7 @@ name: diabetes-deployment
 endpoint_name: diabetest-prod-pred
 model:
   name: diabetes-prod-model
-  version: 1
+  version: latest
   local_path: Job_dynamic_onion_1bkp2thxy3_OutputsAndLogs/model/
   model_format: mlflow
 instance_type: Standard_F2s_v2
