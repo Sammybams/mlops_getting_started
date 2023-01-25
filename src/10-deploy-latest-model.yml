@@ -1,13 +1,10 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
-name: blue
+name: diabetes-deployment
 endpoint_name: diabetest-prod-pred
 model:
-  path: Job_dynamic_onion_1bkp2thxy3_OutputsAndLogs/model/
-code_configuration:
-  code: ../../model-1/onlinescoring/
-  scoring_script: score.py
-environment: 
-  conda_file: Job_dynamic_onion_1bkp2thxy3_OutputsAndLogs/model/conda.yaml
-  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest
-instance_type: Standard_DS2_v2
+  name: diabetes-prod-model
+  version: 1
+  local_path: Job_dynamic_onion_1bkp2thxy3_OutputsAndLogs/model/
+  model_format: mlflow
+instance_type: Standard_F2s_v2
 instance_count: 1
