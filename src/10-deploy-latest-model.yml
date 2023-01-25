@@ -2,7 +2,7 @@ $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.sch
 name: blue
 endpoint_name: diabetest-prod-pred
 model:
-  path: ../../model-1/model/
+  path: Job_dynamic_onion_1bkp2thxy3_OutputsAndLogs/model/
 code_configuration:
   code: ../../model-1/onlinescoring/
   scoring_script: score.py
