@@ -4,5 +4,7 @@ endpoint_name: diabetest-prod-pred
 model:
   name: diabetes-prod-model
   version: 1
+  path: azureml://subscriptions/93cb755b-5106-4fb2-aef4-36fcccbb20e7/resourceGroups/mlops/workspaces/mlops_getting_started/datastores/workspaceblobstore/paths/LocalUpload/e99addeb7cdea8a40cef7ddbf66c3cbc/model
+  type: mlflow_model
 instance_type: Standard_F2s_v2
 instance_count: 1
