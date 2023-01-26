@@ -3,7 +3,7 @@ name: diabetes-deployment
 endpoint_name: diabetest-prod-pred
 model:
   name: diabetes-prod-model
-  version: latest
+  version: 1
   path: model
   type: mlflow_model
 instance_type: Standard_F2s_v2
