@@ -5,6 +5,6 @@ model:
   name: diabetes-prod-model
   version: latest
   path: model
-  model_format: mlflow
+  type: mlflow_model
 instance_type: Standard_F2s_v2
 instance_count: 1
